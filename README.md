@@ -1,5 +1,12 @@
 # Library_django insruction
 
+## Dependency installation
+Intsall different python's frameworks and libraries on your computer (will be better if you will use venv)
+```
+pip install -r requirements.txt
+```
+
+
 ## Launching a web application.
 Additionally, to run this web application, you need to create a ".env" file and insert the following information:
 
