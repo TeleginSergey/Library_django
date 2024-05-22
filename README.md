@@ -1,9 +1,29 @@
 # Library_django insruction
 
+## Attention!
+## Some commands can be diffirent depending on your OS and distributions
+## This instruction was written for Linux Ubuntu
+
+
 ## Dependency installation
 Intsall different python's frameworks and libraries on your computer (will be better if you will use venv)
 ```
 pip install -r requirements.txt
+```
+Also you must download django through your package manager,
+for example at Linux Ubuntu:
+```
+sudo apt install django
+```
+
+## Using venv (virtual enviroment)
+Creating venv:
+```
+python -m venv <name_of_your_venv>
+```
+Activating venv:
+```
+source <name_of_your_venv>/bin/activate
 ```
 
 
@@ -51,7 +71,7 @@ You can launch it later by simply typing the command:
 
 
 
-## Launching tests
+## Launching tests command
 - python3 manage.py test tests
 
 Attention! If the tests are not passing, try renaming the folder "tests" to a different name, for example "testing". Accordingly, you will also need to change name "tests" in settings.py.
@@ -67,5 +87,17 @@ Start docker container for MinIO:
 docker run -d --name minio_3 -p 9000:9000 -p 9001:9001 -e "MINIO_ROOT_USER=user" -e "MINIO_ROOT_PASSWORD=password" minio/minio server /data --console-ad
 ```
 If you go to the address in the browser https://127.0.0.1:9001 and register (login, password are provided in the command below, which you should enter), you will be able to create a storage. Our application expects a storage of type public, as well as a directory "static", where, accordingly, there will be PDF files for reading on our web application.
+
+## Problems
+
+### Logout
+if you can't log out of your account on this web-app,
+insert at templates/base_generic.html instead logout (delete whe whole 16 line) this code:
+```
+<form method="post" action="{% url 'logout' %}?next={{request.path}}">
+    {% csrf_token %}
+    <input type="submit" value="Logout">
+</form>
+```
 
 Thanks for reading:)
