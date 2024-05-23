@@ -45,7 +45,7 @@ MINIO_API=http://127.0.0.1:9000
 
 Also you need to create a docker container for database:
 ```
-docker -d --name library -p 5434 -e POSTGRES_USER=app -e POSTGRES_PASSWORD=123 -e POSTGRES_DB=library_db
+docker run -d --name library -p 5435:5432 -e POSTGRES_USER=app -e POSTGRES_PASSWORD=123 -e POSTGRES_DB=library_db postgres
 ```
 
 After it, with this command
