@@ -23,16 +23,16 @@ jobs:
       run: |
         python3 -m pip install --upgrade pip
         pip install -r requirements.txt
-        chmod +x tests/test.sh
+        chmod +x testing/test.sh
     - name: Test views
-      run: ./tests/test.sh tests.test_views
+      run: ./testing/test.sh testing.test_views
     - name: Test models
-      run: ./tests/test.sh tests.test_models
+      run: ./testing/test.sh testing.test_models
     - name: Test api
-      run: ./tests/test.sh tests.test_api
+      run: ./testing/test.sh testing.test_api
     - name: Test forms
-      run: ./tests/test.sh tests.test_forms
+      run: ./testing/test.sh testing.test_forms
     - name: Test buy
-      run: ./tests/test.sh tests.test_buy
+      run: ./testing/test.sh testing.test_buy
     - name: Test add_funds
-      run: ./tests/test.sh tests.test_add_funds
+      run: ./testing/test.sh testing.test_add_funds
